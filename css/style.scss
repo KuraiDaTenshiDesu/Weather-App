@@ -3,6 +3,7 @@
 :root {
     --font-quicksand: "Quicksand", sans-serif;
 
+    --spacing-extra-small: 5px;
     --spacing-small: 10px;
     --spacing-medium: 15px;
     --spacing-large: 30px;
@@ -54,6 +55,8 @@ body {
 
         &__button {
             position: absolute;
+            display: flex;
+            align-items: center;
             right: var(--spacing-medium);
             top: 0;
             height: 100%;
@@ -62,6 +65,139 @@ body {
             border: 0;
             outline: 0;
             cursor: pointer;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    &-main {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        width: 100%;
+        height: calc(100% - 50px);
+
+        &__info {
+            position: relative;
+
+            &__now {
+                width: 100%;
+                height: calc(100% - 50px);
+
+                &__degrees {
+                    padding: var(--spacing-large) var(--spacing-medium);
+                    font-size: 40px;
+                    font-family: var(--font-quicksand);
+                }
+
+                &__weather {
+                    width: 25%;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                &__city-name {
+                    padding: var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+            }
+
+            &__details {
+                display: none;
+                width: 100%;
+                height: calc(100% - 50px);
+
+                &__city-name {
+                    padding: var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+
+                &__degrees {
+                    padding: var(--spacing-extra-small) var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+
+                &__feels-like {
+                    padding: var(--spacing-extra-small) var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+
+                &__weather {
+                    padding: var(--spacing-extra-small) var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+
+                &__sunrise {
+                    padding: var(--spacing-extra-small) var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+
+                &__sunset {
+                    padding: var(--spacing-extra-small) var(--spacing-medium);
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                }
+            }
+
+            &__forecast {
+                display: none;
+                width: 100%;
+                height: calc(100% - 50px);
+            }
+
+            &__tabs {
+                position: absolute;
+                bottom: 0;
+                height: 50px;
+                left: 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                border-top: var(--border);
+            }
+
+            &__tab {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: var(--font-quicksand);
+                font-size: var(--fz-medium);
+
+                &__active {
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+
+        &__cities {
+            border-left: var(--border);
+
+            &__header {
+                display: block;
+                text-align: center;
+                padding: var(--spacing-small);
+                padding-top: var(--spacing-large);
+                width: 100%;
+                font-size: var(--fz-large);
+                font-family: var(--font-quicksand);
+                border-bottom: var(--border);
+            }
         }
     }
 }

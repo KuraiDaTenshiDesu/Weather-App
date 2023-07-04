@@ -11,19 +11,51 @@
 
     <div class="weather">
 
-        <form class="weather-search">
+        <div class="weather-search">
             <input type="text" class="weather-search__input" placeholder="Input city name" maxlength="30">
-            <button class="weather-search__button">
+            <a class="weather-search__button">
                 <img src="img/search-icon.png" alt="Search">
-            </button>
-        </form>
+            </a>
+        </div>
 
-        <div class="weather-info">
+        <div class="weather-main">
+            <div class="weather-main__info">
+
+                <div class="weather-main__info__now">
+                    <p class="weather-main__info__now__degrees" id="now-degrees"></p>
+                    <img class="weather-main__info__now__weather" id="now-weather">
+                    <p class="weather-main__info__now__city-name" id="now-cityname"></p>
+                    <a class="weather-main__info__now__add-to-favorites"></a>
+                </div>
+
+                <div class="weather-main__info__details">
+                    <p class="weather-main__info__details__city-name" id="details-cityname"></p>
+                    <p class="weather-main__info__details__degrees" id="details-degrees"></p>
+                    <p class="weather-main__info__details__feels-like" id="details-feelslike"></p>
+                    <p class="weather-main__info__details__weather" id="details-weather"></p>
+                    <p class="weather-main__info__details__sunrise" id="details-sunrise"></p>
+                    <p class="weather-main__info__details__sunset" id="details-sunset"></p>
+                </div>
+
+                <div class="weather-main__info__forecast"></div>
+
+                <div class="weather-main__info__tabs">
+                    <a class="weather-main__info__tab weather-main__info__tab__active" id="now">Now</a>
+                    <a class="weather-main__info__tab" id="details">Details</a>
+                    <a class="weather-main__info__tab" id="forecast">Forecast</a>
+                </div>
+            </div>
+
+            <div class="weather-main__cities">
+                <h3 class="weather-main__cities__header">Added Locations:</h3>
+                <ul class="weather-main__cities__list"></ul>
+            </div>
         </div>
     </div>
 
+    <script src="constants/page_constants.js"></script>
     <script src="constants/api_constants.js"></script>
-    <script src="constants/roots.js"></script>
+    <script src="js/getWeather.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 :root {
   --font-quicksand: "Quicksand", sans-serif;
+  --spacing-extra-small: 5px;
   --spacing-small: 10px;
   --spacing-medium: 15px;
   --spacing-large: 30px;
@@ -49,6 +50,8 @@ body {
 }
 .weather-search__button {
   position: absolute;
+  display: flex;
+  align-items: center;
   right: var(--spacing-medium);
   top: 0;
   height: 100%;
@@ -57,4 +60,118 @@ body {
   border: 0;
   outline: 0;
   cursor: pointer;
+}
+.weather-search__button img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.weather-main {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.weather-main__info {
+  position: relative;
+}
+.weather-main__info__now {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.weather-main__info__now__degrees {
+  padding: var(--spacing-large) var(--spacing-medium);
+  font-size: 40px;
+  font-family: var(--font-quicksand);
+}
+.weather-main__info__now__weather {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+.weather-main__info__now__city-name {
+  padding: var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details {
+  display: none;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.weather-main__info__details__city-name {
+  padding: var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details__degrees {
+  padding: var(--spacing-extra-small) var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details__feels-like {
+  padding: var(--spacing-extra-small) var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details__weather {
+  padding: var(--spacing-extra-small) var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details__sunrise {
+  padding: var(--spacing-extra-small) var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__details__sunset {
+  padding: var(--spacing-extra-small) var(--spacing-medium);
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast {
+  display: none;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.weather-main__info__tabs {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: var(--border);
+}
+.weather-main__info__tab {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-quicksand);
+  font-size: var(--fz-medium);
+}
+.weather-main__info__tab__active {
+  background: #000;
+  color: #fff;
+}
+.weather-main__cities {
+  border-left: var(--border);
+}
+.weather-main__cities__header {
+  display: block;
+  text-align: center;
+  padding: var(--spacing-small);
+  padding-top: var(--spacing-large);
+  width: 100%;
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  border-bottom: var(--border);
 }/*# sourceMappingURL=style.css.map */

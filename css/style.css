@@ -5,6 +5,7 @@
   --spacing-small: 10px;
   --spacing-medium: 15px;
   --spacing-large: 30px;
+  --spacing-huge: 30px;
   --border: 3px solid #000;
   --fz-small: 10px;
   --fz-medium: 14px;
@@ -28,8 +29,8 @@ body {
 }
 
 .weather {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 50vh;
   border: var(--border);
 }
 .weather-search {
@@ -73,10 +74,12 @@ body {
 }
 .weather-main__info {
   position: relative;
+  height: 100%;
 }
 .weather-main__info__now {
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(50vh - 100px - 6px);
+  position: relative;
 }
 .weather-main__info__now__degrees {
   padding: var(--spacing-large) var(--spacing-medium);
@@ -94,10 +97,17 @@ body {
   font-family: var(--font-quicksand);
   font-weight: bold;
 }
+.weather-main__info__now__add-to-favorites {
+  position: absolute;
+  display: block;
+  bottom: var(--spacing-small);
+  right: var(--spacing-small);
+  cursor: pointer;
+}
 .weather-main__info__details {
   display: none;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(50vh - 100px - 6px);
 }
 .weather-main__info__details__city-name {
   padding: var(--spacing-medium);
@@ -138,7 +148,57 @@ body {
 .weather-main__info__forecast {
   display: none;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(50vh - 100px - 6px);
+  overflow-y: scroll;
+}
+.weather-main__info__forecast__data {
+  width: 95%;
+  padding: var(--spacing-extra-small);
+  padding-top: var(--spacing-huge);
+  margin: var(--spacing-extra-small) auto;
+  border: var(--border);
+  position: relative;
+}
+.weather-main__info__forecast__data__date {
+  position: absolute;
+  top: var(--spacing-extra-small);
+  left: var(--spacing-extra-small);
+  font-size: var(--fz-medium);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast__data__time {
+  position: absolute;
+  top: var(--spacing-extra-small);
+  right: var(--spacing-extra-small);
+  font-size: var(--fz-medium);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast__data__degrees {
+  font-size: var(--fz-medium);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast__data__feels-like {
+  font-size: var(--fz-medium);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast__data__weather {
+  position: absolute;
+  bottom: calc(20px + var(--spacing-extra-small));
+  right: var(--spacing-extra-small);
+  font-size: var(--fz-medium);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+}
+.weather-main__info__forecast__data__icon {
+  position: absolute;
+  bottom: var(--spacing-extra-small);
+  right: var(--spacing-extra-small);
+  width: 20px;
+  height: 20px;
 }
 .weather-main__info__tabs {
   position: absolute;
@@ -149,6 +209,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: var(--border);
+  background: #fff;
 }
 .weather-main__info__tab {
   height: 100%;
@@ -157,6 +218,7 @@ body {
   justify-content: center;
   font-family: var(--font-quicksand);
   font-size: var(--fz-medium);
+  cursor: pointer;
 }
 .weather-main__info__tab__active {
   background: #000;
@@ -174,4 +236,17 @@ body {
   font-size: var(--fz-large);
   font-family: var(--font-quicksand);
   border-bottom: var(--border);
+}
+.weather-main__cities__list {
+  padding: var(--spacing-small) var(--spacing-medium);
+  list-style-type: none;
+  overflow-y: scroll;
+  width: 100%;
+  max-height: calc(50vh - 50px - 67.2px - 6px);
+}
+.weather-main__cities__list__city {
+  font-size: var(--fz-large);
+  font-family: var(--font-quicksand);
+  font-weight: bold;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,7 @@
     --spacing-small: 10px;
     --spacing-medium: 15px;
     --spacing-large: 30px;
+    --spacing-huge: 30px;
 
     --border: 3px solid #000;
 
@@ -32,8 +33,8 @@ body {
 }
 
 .weather {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 50vh;
     border: var(--border);
 
     &-search {
@@ -80,10 +81,12 @@ body {
 
         &__info {
             position: relative;
+            height: 100%;
 
             &__now {
                 width: 100%;
-                height: calc(100% - 50px);
+                height: calc(50vh - 100px - 6px);
+                position: relative;
 
                 &__degrees {
                     padding: var(--spacing-large) var(--spacing-medium);
@@ -103,12 +106,20 @@ body {
                     font-family: var(--font-quicksand);
                     font-weight: bold;
                 }
+
+                &__add-to-favorites {
+                    position: absolute;
+                    display: block;
+                    bottom: var(--spacing-small);
+                    right: var(--spacing-small);
+                    cursor: pointer;
+                }
             }
 
             &__details {
                 display: none;
                 width: 100%;
-                height: calc(100% - 50px);
+                height: calc(50vh - 100px - 6px);
 
                 &__city-name {
                     padding: var(--spacing-medium);
@@ -156,7 +167,64 @@ body {
             &__forecast {
                 display: none;
                 width: 100%;
-                height: calc(100% - 50px);
+                height: calc(50vh - 100px - 6px);
+                overflow-y: scroll;
+
+                &__data {
+                    width: 95%;
+                    padding: var(--spacing-extra-small);
+                    padding-top: var(--spacing-huge);
+                    margin: var(--spacing-extra-small) auto;
+                    border: var(--border);
+                    position: relative;
+
+                    &__date {
+                        position: absolute;
+                        top: var(--spacing-extra-small);
+                        left: var(--spacing-extra-small);
+                        font-size: var(--fz-medium);
+                        font-family: var(--font-quicksand);
+                        font-weight: bold;
+                    }
+
+                    &__time {
+                        position: absolute;
+                        top: var(--spacing-extra-small);
+                        right: var(--spacing-extra-small);
+                        font-size: var(--fz-medium);
+                        font-family: var(--font-quicksand);
+                        font-weight: bold;
+                    }
+
+                    &__degrees {
+                        font-size: var(--fz-medium);
+                        font-family: var(--font-quicksand);
+                        font-weight: bold;
+                    }
+
+                    &__feels-like {
+                        font-size: var(--fz-medium);
+                        font-family: var(--font-quicksand);
+                        font-weight: bold;
+                    }
+
+                    &__weather {
+                        position: absolute;
+                        bottom: calc(20px + var(--spacing-extra-small));
+                        right: var(--spacing-extra-small);
+                        font-size: var(--fz-medium);
+                        font-family: var(--font-quicksand);
+                        font-weight: bold;
+                    }
+
+                    &__icon {
+                        position: absolute;
+                        bottom: var(--spacing-extra-small);
+                        right: var(--spacing-extra-small);
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
 
             &__tabs {
@@ -168,6 +236,7 @@ body {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 border-top: var(--border);
+                background: #fff;
             }
 
             &__tab {
@@ -177,6 +246,7 @@ body {
                 justify-content: center;
                 font-family: var(--font-quicksand);
                 font-size: var(--fz-medium);
+                cursor: pointer;
 
                 &__active {
                     background: #000;
@@ -197,6 +267,21 @@ body {
                 font-size: var(--fz-large);
                 font-family: var(--font-quicksand);
                 border-bottom: var(--border);
+            }
+
+            &__list {
+                padding: var(--spacing-small) var(--spacing-medium);
+                list-style-type: none;
+                overflow-y: scroll;
+                width: 100%;
+                max-height: calc(50vh - 50px - 67.2px - 6px);
+
+                &__city {
+                    font-size: var(--fz-large);
+                    font-family: var(--font-quicksand);
+                    font-weight: bold;
+                    cursor: pointer;
+                }
             }
         }
     }

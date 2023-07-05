@@ -1,3 +1,9 @@
+if (sessionStorage.getItem('last_query')) {
+    getWeather(sessionStorage.getItem('last_query'))
+}
+
+showFavorites();
+
 tab_now.addEventListener('click', () => {
     tab_now.classList.add('weather-main__info__tab__active');
     tab_details.classList.remove('weather-main__info__tab__active');
@@ -28,9 +34,18 @@ tab_forecast.addEventListener('click', () => {
     document.querySelector('.weather-main__info__forecast').style.display = 'block';
 })
 
-search_button.addEventListener('click', getWeather);
+search_button.addEventListener('click', () => {
+    getWeather(document.querySelector('.weather-search__input').value);
+});
+
 search_input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        getWeather();
+        getWeather(document.querySelector('.weather-search__input').value);
     }
 })
+
+cities_list.addEventListener('click', event => {
+    getWeather(event.target.innerHTML);
+})
+
+add_to_favorites.addEventListener('click', event => editFavorites(event));
